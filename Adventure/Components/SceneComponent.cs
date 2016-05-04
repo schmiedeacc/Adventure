@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Adventure.Model;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,18 @@ namespace Adventure
         public override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            Area area = game.Simulation.World.Areas[0];
+
+
+
+            for (int x = 0; x < area.Width;  x++)
+            {
+                for (int y = 0; y < area.Height; y++)
+                {
+
+                }
+            }
         }
     }
 }
