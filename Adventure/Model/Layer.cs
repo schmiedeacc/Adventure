@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Adventure.Model
 {
-    internal class Area
+    internal class Layer
     {
 
         public int Width
@@ -21,26 +21,15 @@ namespace Adventure.Model
             private set;
         }
 
-        public Layer [] Layers
-        {
-            get;
-            set;
-        }
-
         public Tile[,] Tiles
         {
             get;
             private set;
         }
 
-        public List<Item> Items
+        public Layer(int width, int height)
         {
-            get;
-            private set;
-        }
 
-        public Area(int layers, int width, int height)
-        {
             if (width < 5)
                 throw new ArgumentException("Spielbereich muss mindestens 5 Zellen breit sein");
             if (height < 5)
@@ -49,13 +38,7 @@ namespace Adventure.Model
             Width = width;
             Height = height;
 
-            Layers = new Layer[layers];
-            for (int l = 0; l < layers; l++)
-                Layers[l] = new Layer(width, height);
-            
-
-            Tiles = new Tile[width,height];
-            Items = new List<Item>();
+            Tiles = new Tile[width, height];
         }
     }
 }

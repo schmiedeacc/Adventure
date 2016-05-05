@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Adventure.Model
 {
-    public class World
+    internal class World
     {
         public List<Area> Areas
         {

@@ -9,7 +9,6 @@ namespace Adventure
     /// </summary>
     internal class Adventure : Game
     {
-        {
         GraphicsDeviceManager graphics;
 
         public InputComponent Input { get; private set; }

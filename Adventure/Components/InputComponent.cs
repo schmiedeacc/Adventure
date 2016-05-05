@@ -24,7 +24,7 @@ namespace Adventure
             Vector2 movement = Vector2.Zero;
 
             //Gamepad Steuerung
-            GamePadState gamePad = GamePad.GetState();
+            GamePadState gamePad = GamePad.GetState(PlayerIndex.One);
             movement += gamePad.ThumbSticks.Left * new Vector2(1f,-1f);
 
             //Tastatur Steuerung
@@ -37,6 +37,8 @@ namespace Adventure
                 movement += new Vector2(0f, -1f);
             if (keyboard.IsKeyDown(Keys.Down))
                 movement += new Vector2(0f, 1f);
+            if (keyboard.IsKeyDown(Keys.Escape))
+                game.Exit();
 
             if (movement.Length() > 1f)
                 movement.Normalize();

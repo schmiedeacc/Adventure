@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace Adventure.Model
 {
-    class Tile
+   internal class Tile
     {
+
+        public bool Blocked
+        {
+            get;
+            set;
+        }
+
+
+
+        public Tile()
+        {
+
+        }
     }
 }
